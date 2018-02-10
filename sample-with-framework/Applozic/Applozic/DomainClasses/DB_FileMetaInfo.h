@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSString * key;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * size;
+@property (nonatomic, retain) NSString * url;
+
 @property (nonatomic, retain) NSString * suUserKeyString;
 @property (nonatomic, retain) NSString * thumbnailUrl;
 

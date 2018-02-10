@@ -11,7 +11,7 @@
 
 #define KBASE_URL ([ALUserDefaultsHandler getBASEURL])
 #define MQTT_URL ([ALUserDefaultsHandler getMQTTURL])
-#define KBASE_FILE_URL ([ALUserDefaultsHandler getFILEURL])
+#define KBASE_FILE_URL @"http://apps-test.applozic.com:8083"//([ALUserDefaultsHandler getFILEURL])
 #define MQTT_PORT ([ALUserDefaultsHandler getMQTTPort])
 
 #define GREY_COLOR ([UIColor colorWithWhite:0.7 alpha:0.1])
@@ -42,7 +42,7 @@
 
 #define CONNECTION_TYPE_USER_IMG_UPLOAD @"CONNECTION_TYPE_USER_IMG_UPLOAD"
 #define CONNECTION_TYPE_GROUP_IMG_UPLOAD @"CONNECTION_TYPE_GROUP_UPLOAD"
-#define IMAGE_UPLOAD_URL @"/rest/ws/upload/file"
+#define IMAGE_UPLOAD_URL @"/files/upload/image"
 #define IMAGE_UPLOAD_ENDPOINT @"/files/upload/"
 #define CUSTOM_STORAGE_IMAGE_UPLOAD_ENDPOINT @"/rest/ws/upload/image"
 #define IMAGE_THUMBNAIL_ENDPOIT @"/files/"

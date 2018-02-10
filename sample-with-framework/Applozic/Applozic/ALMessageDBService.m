@@ -536,6 +536,7 @@
     fileMetaInfo.name = fileInfo.name;
     fileMetaInfo.size = fileInfo.size;
     fileMetaInfo.suUserKeyString = fileInfo.userKey;
+    fileMetaInfo.url=fileInfo.url;
     fileMetaInfo.thumbnailUrl = fileInfo.thumbnailUrl;
     
     return fileMetaInfo;
@@ -584,6 +585,8 @@
         theFileMeta.size = theEntity.fileMetaInfo.size;
         theFileMeta.userKey = theEntity.fileMetaInfo.suUserKeyString;
         theFileMeta.thumbnailUrl = theEntity.fileMetaInfo.thumbnailUrl;
+        theFileMeta.url = theEntity.fileMetaInfo.url;
+
         theMessage.fileMeta = theFileMeta;
     }
     return theMessage;

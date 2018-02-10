@@ -64,6 +64,7 @@
         <attribute name="suUserKeyString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbnailUrl" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="fileMetaInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DB_Message" inverseName="fileMetaInfo" inverseEntity="DB_Message" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="DB_Message" representedClassName="DB_Message" syncable="YES">
         <attribute name="contactId" optional="YES" attributeType="String" syncable="YES"/>

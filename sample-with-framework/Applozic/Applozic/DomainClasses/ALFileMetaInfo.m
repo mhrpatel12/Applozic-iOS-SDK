@@ -52,7 +52,7 @@
 {
     if (ALApplozicSettings.isStorageServiceEnabled) {
         NSString *fullUrl = [[NSString alloc] initWithFormat:@"%@%@%@",KBASE_FILE_URL,IMAGE_THUMBNAIL_ENDPOIT,url];
-        return fullUrl;
+        return url;
     }
     return url;
 }

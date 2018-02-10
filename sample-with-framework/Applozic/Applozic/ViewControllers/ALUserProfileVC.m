@@ -512,7 +512,7 @@ totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInte
             return;
         }
         
-        NSString * uploadUrl = [KBASE_URL stringByAppendingString:IMAGE_UPLOAD_URL];
+        NSString * uploadUrl = [KBASE_FILE_URL stringByAppendingString:IMAGE_UPLOAD_URL];
         [self proessUploadImage:image uploadURL:uploadUrl withdelegate:self];
         
     }];
@@ -552,6 +552,7 @@ totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInte
         // post body
         NSMutableData *body = [NSMutableData data];
         NSString *FileParamConstant = @"file";
+
         NSData *imageData = [[NSData alloc] initWithContentsOfFile:filePath];
         NSLog(@"IMAGE_DATA :: %f",imageData.length/1024.0);
         

@@ -336,7 +336,7 @@
             return;
         }
         
-        NSString * uploadUrl = [KBASE_URL stringByAppendingString:IMAGE_UPLOAD_URL];
+        NSString * uploadUrl = [KBASE_FILE_URL stringByAppendingString:IMAGE_UPLOAD_URL];
         
         self.groupImageUploadURL = uploadUrl;
         

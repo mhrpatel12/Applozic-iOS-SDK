@@ -562,6 +562,7 @@
     
     [ALApplozicSettings setChatListTabTitle:@""];
     [ALApplozicSettings setProfileTabTitle:@""];
+    [ALApplozicSettings enableStorageService:YES];
     // Hide attachment options in chat screen
 //    NSArray * attachmentOptionToHide = @[@":audio", @":video", @":location",@":shareContact"];
 //
