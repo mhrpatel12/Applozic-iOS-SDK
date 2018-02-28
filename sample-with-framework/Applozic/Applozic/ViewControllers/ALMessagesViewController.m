@@ -152,14 +152,15 @@
     UIViewController *VC = self.tabBarController.selectedViewController;
     UINavigationController *navVC = (UINavigationController *)VC;
     
-    for(UIViewController *VC in navVC.viewControllers)
-    {
-        if([NSStringFromClass([VC class]) isEqualToString:@"ALUserProfileVC"])
+    if (navVC !=nil) {
+        for(UIViewController *VC in navVC.viewControllers)
         {
-            profileFlag = YES;
+            if([NSStringFromClass([VC class]) isEqualToString:@"ALUserProfileVC"])
+            {
+                profileFlag = YES;
+            }
         }
     }
-    
     if (self.navigationController.viewControllers.count == 1 && !profileFlag)
     {
         NSLog(@"MSG VC : CLOSING_MQTT_CONNECTIONS");
