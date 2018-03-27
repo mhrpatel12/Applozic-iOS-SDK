@@ -58,7 +58,11 @@
         self.groupNameInput.textAlignment = NSTextAlignmentRight;
     }
     
-    
+    self.groupNameInput.layer.cornerRadius=8.0f;
+    self.groupNameInput.layer.masksToBounds=YES;
+    self.groupNameInput.layer.borderColor=[[UIColor blackColor]CGColor];
+    self.groupNameInput.layer.borderWidth= 1.0f;
+    [self.groupNameInput setValue:[UIColor blackColor] forKeyPath:@"_placeholderLabel.textColor"];
     self.groupNameInput.placeholder = NSLocalizedStringWithDefaultValue(@"groupNameTextField", nil, [NSBundle mainBundle], @"Type your group name", @"");
     
     [self.descriptionTextView setText: NSLocalizedStringWithDefaultValue(@"descriptionTextForGroup", nil, [NSBundle mainBundle], @"Please provide group name", @"")];
