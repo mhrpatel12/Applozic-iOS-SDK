@@ -387,13 +387,13 @@
     
     /*********************************************  NAVIGATION SETTINGS  ********************************************/
     
-    [ALApplozicSettings setStatusBarBGColor:[UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]];
-    [ALApplozicSettings setStatusBarStyle:UIStatusBarStyleLightContent];
+    [ALApplozicSettings setStatusBarBGColor:[UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0]];
+    [ALApplozicSettings setStatusBarStyle:UIStatusBarStyleDefault];
     /* BY DEFAULT Black:UIStatusBarStyleDefault IF REQ. White: UIStatusBarStyleLightContent  */
     /* ADD property in info.plist "View controller-based status bar appearance" type: BOOLEAN value: NO */
     
-    [ALApplozicSettings setColorForNavigation:[UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]];
-    [ALApplozicSettings setColorForNavigationItem:[UIColor whiteColor]];
+    [ALApplozicSettings setColorForNavigation:[UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0]];
+    [ALApplozicSettings setColorForNavigationItem:[UIColor blackColor]];
     [ALApplozicSettings hideRefreshButton:NO];
     [ALUserDefaultsHandler setNavigationRightButtonHidden:NO];
     [ALUserDefaultsHandler setBottomTabBarHidden:NO];
@@ -407,10 +407,10 @@
     
     /***************************************  SEND RECEIVE MESSAGES SETTINGS  ***************************************/
     
-    [ALApplozicSettings setSendMsgTextColor:[UIColor whiteColor]];
+    [ALApplozicSettings setSendMsgTextColor:[UIColor blackColor]];
     [ALApplozicSettings setReceiveMsgTextColor:[UIColor grayColor]];
-    [ALApplozicSettings setColorForReceiveMessages:[UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:1]];
-    [ALApplozicSettings setColorForSendMessages:[UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]];
+    [ALApplozicSettings setColorForReceiveMessages:[UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0]];
+    [ALApplozicSettings setColorForSendMessages:[UIColor colorWithRed:0.86 green:0.98 blue:0.78 alpha:1.0]];
     
     [ALApplozicSettings setCustomMessageBackgroundColor:[UIColor lightGrayColor]];              /*  SET CUSTOM MESSAGE COLOR */
     [ALApplozicSettings setCustomMessageFontSize:14];                                     /*  SET CUSTOM MESSAGE FONT SIZE */
@@ -522,7 +522,7 @@
     [ALUserDefaultsHandler setLoginUserConatactVisibility:NO];
     [ALApplozicSettings setUserProfileHidden:NO];
     [ALApplozicSettings setFontFace:@"Helvetica"];
-    [ALApplozicSettings setChatWallpaperImageName:@"<WALLPAPER NAME>"];
+    [ALApplozicSettings setChatWallpaperImageName:@"wallpaper"];
     [ALApplozicSettings replyOptionEnabled:YES];
     [ALApplozicSettings forwardOptionEnableOrDisable:YES];
 
