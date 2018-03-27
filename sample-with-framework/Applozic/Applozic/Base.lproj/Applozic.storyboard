@@ -434,9 +434,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applozic_group_icon" translatesAutoresizingMaskIntoConstraints="NO" id="L1b-27-OrZ">
+                                    <imageView tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-staff-50" translatesAutoresizingMaskIntoConstraints="NO" id="L1b-27-OrZ">
                                         <rect key="frame" x="510" y="86" width="75" height="75"/>
-                                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.92540901900000005" green="0.92554211620000004" blue="0.92537993190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your group name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDG-3p-bsz">
                                         <rect key="frame" x="20" y="195" width="565" height="30"/>
@@ -1907,12 +1907,12 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
         <image name="DELETEIOSX" width="50" height="50"/>
         <image name="SendButton20" width="20" height="20"/>
         <image name="applozic_edit" width="18" height="18"/>
-        <image name="applozic_group_icon" width="100" height="100"/>
         <image name="applozic_uploadCamera" width="20" height="16"/>
         <image name="attachments" width="28" height="13"/>
         <image name="audio_mic" width="462" height="726"/>
         <image name="ic_action_camera" width="64" height="64"/>
         <image name="ic_phone_gray" width="30" height="32"/>
+        <image name="icons8-staff-50" width="50" height="50"/>
         <image name="online_show" width="200" height="200"/>
     </resources>
 </document>
