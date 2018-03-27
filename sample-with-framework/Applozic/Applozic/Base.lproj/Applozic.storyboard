@@ -1115,7 +1115,6 @@
         <!--Navigation Controller-->
         <scene sceneID="44I-5Y-y8P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cvd-F3-UEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nR9-3H-cTW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" id="70j-Xw-YMX"/>
                     <toolbarItems/>
@@ -1127,13 +1126,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6ZI-Fk-aZL"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cvd-F3-UEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="683" y="244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oUw-eN-7TI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0w7-oH-wxo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MNB-7r-ca3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="rAD-Rw-MBT"/>
                     <toolbarItems/>
@@ -1146,6 +1145,7 @@
                         <segue destination="oZy-jo-Qf5" kind="relationship" relationship="rootViewController" id="m68-lA-99u"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0w7-oH-wxo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1892" y="933"/>
         </scene>
@@ -1359,7 +1359,7 @@
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ky4-is-ZmF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
-                                    <color key="backgroundColor" red="0.78499677087412911" green="0.92113010025420039" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="105" id="ALB-UP-xPu"/>
                                     </constraints>
@@ -1403,7 +1403,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.93257953537401261" green="0.97973614349245775" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="fEQ-TE-P0v" firstAttribute="centerX" secondItem="Ky4-is-ZmF" secondAttribute="centerX" id="1oL-5e-N6s"/>
                                 <constraint firstItem="rO1-dd-oCu" firstAttribute="trailing" secondItem="d2x-8G-9aN" secondAttribute="trailing" id="3rx-dL-Ua4"/>
@@ -1566,7 +1566,6 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
         <!--Navigation Controller-->
         <scene sceneID="sr7-pi-5eS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FB6-Dv-Awo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cae-ki-ei4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="fx6-zu-YmW"/>
                     <toolbarItems/>
@@ -1578,6 +1577,7 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
                         <segue destination="dRO-yk-xMN" kind="relationship" relationship="rootViewController" id="oKq-ef-hdB"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FB6-Dv-Awo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-288" y="1358"/>
         </scene>
@@ -1714,12 +1714,6 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
                                             <action selector="sendAction:" destination="rWz-Vg-7Ha" eventType="touchDown" id="FNG-6d-x1V"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path" translatesAutoresizingMaskIntoConstraints="NO" id="oVG-6b-cXM">
-                                        <rect key="frame" x="508" y="8" width="40" height="17"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="17" identifier="beakHeight" id="R36-n0-JWM"/>
-                                        </constraints>
-                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JFb-Gb-Lfr">
                                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                     </imageView>
@@ -1748,12 +1742,9 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
                                     <constraint firstAttribute="height" constant="56" identifier="OuterUIViewHeight" id="0E1-3f-wRQ"/>
                                     <constraint firstItem="IoT-HK-LWd" firstAttribute="top" secondItem="4Au-pr-u6p" secondAttribute="top" id="0U7-ZZ-LRT"/>
                                     <constraint firstItem="6XL-ms-PBf" firstAttribute="trailing" secondItem="Npf-hG-Fxp" secondAttribute="trailingMargin" identifier="SendButtonTrailing" id="8rK-OD-RNv"/>
-                                    <constraint firstItem="oVG-6b-cXM" firstAttribute="top" secondItem="4Au-pr-u6p" secondAttribute="top" identifier="BeakTop" id="Ed8-jm-hLn"/>
                                     <constraint firstItem="IoT-HK-LWd" firstAttribute="leading" secondItem="Npf-hG-Fxp" secondAttribute="leading" constant="6" id="FDq-LG-EPN"/>
-                                    <constraint firstAttribute="trailing" secondItem="oVG-6b-cXM" secondAttribute="trailing" constant="52" identifier="beakTrailing" id="Gme-zY-KoW"/>
                                     <constraint firstItem="4Au-pr-u6p" firstAttribute="leading" secondItem="IoT-HK-LWd" secondAttribute="trailing" id="OTK-I0-0Qz"/>
                                     <constraint firstItem="IoT-HK-LWd" firstAttribute="bottom" secondItem="4Au-pr-u6p" secondAttribute="bottom" id="Uvs-xg-wDE"/>
-                                    <constraint firstItem="oVG-6b-cXM" firstAttribute="leading" secondItem="4Au-pr-u6p" secondAttribute="trailing" constant="-27" identifier="BeakLeading" id="b3o-YC-mEx"/>
                                     <constraint firstItem="4Au-pr-u6p" firstAttribute="bottom" secondItem="6XL-ms-PBf" secondAttribute="bottom" identifier="sendMessageTextViewBottom" id="cyR-uC-0VF"/>
                                     <constraint firstItem="4Au-pr-u6p" firstAttribute="top" relation="lessThanOrEqual" secondItem="Npf-hG-Fxp" secondAttribute="top" constant="8" id="dft-Vb-CWP"/>
                                     <constraint firstItem="6XL-ms-PBf" firstAttribute="leading" secondItem="4Au-pr-u6p" secondAttribute="trailing" constant="17" identifier="sednButtomLEading" id="e9x-Mi-ywy"/>
@@ -1884,7 +1875,6 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="attachmentOutlet" destination="IoT-HK-LWd" id="xvh-EU-ObU"/>
-                        <outlet property="beakImageView" destination="oVG-6b-cXM" id="Sm6-2F-Pvn"/>
                         <outlet property="checkBottomConstraint" destination="UVH-LX-Lg7" id="RMh-0z-US8"/>
                         <outlet property="loadEarlierAction" destination="Bt8-EH-qKK" id="iou-Dl-fiU"/>
                         <outlet property="mActivityIndicator" destination="asq-OT-e0Z" id="YaB-Iy-7rc"/>
@@ -1915,7 +1905,6 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
     </scenes>
     <resources>
         <image name="DELETEIOSX" width="50" height="50"/>
-        <image name="Path" width="360" height="186"/>
         <image name="SendButton20" width="20" height="20"/>
         <image name="applozic_edit" width="18" height="18"/>
         <image name="applozic_group_icon" width="100" height="100"/>
