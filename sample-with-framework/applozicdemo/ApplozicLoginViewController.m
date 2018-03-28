@@ -23,8 +23,6 @@
 @interface ApplozicLoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *userIdField;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *getStarted;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -49,14 +47,10 @@
     [self.view addGestureRecognizer:tap];
     if ([UIApplication sharedApplication].userInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) {
         self.userIdField.textAlignment = NSTextAlignmentRight;
-        self.emailField.textAlignment = NSTextAlignmentRight;
-        self.passwordField.textAlignment = NSTextAlignmentRight;
     }
     
     [self.getStarted setTitle: NSLocalizedStringWithDefaultValue(@"getStarted", nil, [NSBundle mainBundle], @"Get Started", @"") forState:UIControlStateNormal]; // To set the title
-    self.userIdField.placeholder = NSLocalizedStringWithDefaultValue(@"userId", nil, [NSBundle mainBundle], @"UserId", @"");
-    self.emailField.placeholder = NSLocalizedStringWithDefaultValue(@"email", nil, [NSBundle mainBundle], @"Email", @"");
-    self.passwordField.placeholder = NSLocalizedStringWithDefaultValue(@"password", nil, [NSBundle mainBundle], @"Password", @"");
+    self.userIdField.placeholder = NSLocalizedStringWithDefaultValue(@"email", nil, [NSBundle mainBundle], @"Email", @"");
     
 }
 
@@ -169,18 +163,8 @@
         return;
     }
     
-    if (self.passwordField.text.length == 0)
-    {
-        [ALUtilityClass showAlertMessage:NSLocalizedStringWithDefaultValue(@"passwordEmpty", nil, [NSBundle mainBundle], @"Password can't be blank ", @"")
-                                andTitle:NSLocalizedStringWithDefaultValue(@"error", nil, [NSBundle mainBundle], @"Error", @"")];
-        return;
-    }
-
-    
     ALUser * user = [[ALUser alloc] init];
     [user setUserId:[self.userIdField text]];
-    [user setEmail:[self.emailField text]];
-    [user setPassword:[self.passwordField text]];
     [user setAuthenticationTypeId:(short)APPLOZIC];
     [self.mActivityIndicator startAnimating];
     [ALUserDefaultsHandler setUserAuthenticationTypeId:(short)APPLOZIC];
@@ -204,16 +188,8 @@
 //-------------------------------------------------------------------------------------------------------------------
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == self.userIdField) {
-        [self.emailField becomeFirstResponder];
-    }
-    else if (textField == self.emailField) {
-        [self.passwordField becomeFirstResponder];
-    }
-    else {
         //TODO: Also validate user Id and email is entered.
-        [textField resignFirstResponder];
-    }
+    [textField resignFirstResponder];
     return true;
 }
 
