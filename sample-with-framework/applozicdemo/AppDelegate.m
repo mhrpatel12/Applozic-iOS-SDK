@@ -11,12 +11,15 @@
 #import <Applozic/ALPushNotificationService.h>
 #import <Applozic/ALUtilityClass.h>
 #import "ApplozicLoginViewController.h"
+#import <Applozic/ALDataNetworkConnection.h>
 #import "Applozic/ALDBHandler.h"
 #import "Applozic/ALMessagesViewController.h"
 #import "Applozic/ALPushAssist.h"
 #import "Applozic/ALMessageService.h"
+#import <Applozic/ALChatLauncher.h>
 #import <UserNotifications/UserNotifications.h>
 #import <Fabric/Fabric.h>
+#import "ALChatManager.h"
 #import <Crashlytics/Crashlytics.h>
 #import <BuddyBuildSDK/BuddyBuildSDK.h>
 
@@ -47,14 +50,33 @@
     {
         [ALPushNotificationService userSync];
         
-        // Get login screen from storyboard and present it
+        if (![ALDataNetworkConnection checkDataNetworkAvailable])
+        {
+            [self.activityView removeFromSuperview];
+        }
+        else
+        {
+            [self.activityView startAnimating];
+        }
+        
+        ALUser *user = [[ALUser alloc] init];
+        [user setUserId:[ALUserDefaultsHandler getUserId]];
+        [user setEmail:[ALUserDefaultsHandler getEmailId]];
+        
+        [self.window makeKeyAndVisible];
+        self.chatLauncher = [[ALChatLauncher alloc] initWithApplicationId:[self getApplicationKey]];
+        NSString * title = self.window.rootViewController.title? self.window.rootViewController.title: @"< Back";
+        [self.chatLauncher launchChatList:title andViewControllerObject:self.window.rootViewController];
+        
+    }else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ApplozicLoginViewController *viewController = (ApplozicLoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LaunchChatFromSimpleViewController"];
+        ApplozicLoginViewController *viewController = (ApplozicLoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"ALLoginViewController"];
         
         [self.window makeKeyAndVisible];
         [self.window.rootViewController presentViewController:viewController
                                                      animated:nil
                                                    completion:nil];
+        
     }
     
     NSLog(@"launchOptions: %@", launchOptions);
@@ -131,6 +153,13 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
     [[ALDBHandler sharedInstance] saveContext];
+}
+
+-(NSString *)getApplicationKey
+{
+    NSString * appKey = [ALUserDefaultsHandler getApplicationKey];
+    NSLog(@"APPLICATION_KEY :: %@",appKey);
+    return appKey ? appKey : APPLICATION_ID;
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
