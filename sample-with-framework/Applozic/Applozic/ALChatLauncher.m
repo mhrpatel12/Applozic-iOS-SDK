@@ -145,7 +145,15 @@
     UINavigationController * navBAR = (UINavigationController *)[[tabBAR viewControllers] objectAtIndex:0];
     ALMessagesViewController * msgVC = (ALMessagesViewController *)[[navBAR viewControllers] objectAtIndex:0];
     msgVC.messagesViewDelegate = self;
-    [viewController presentViewController:theTabBar animated:YES completion:nil];
+    
+    CATransition *transition = [[CATransition alloc] init];
+    transition.duration = 0.40;
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromRight;
+    [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [viewController.view.window.layer addAnimation:transition forKey:kCATransition];
+    
+    [viewController presentViewController:theTabBar animated:false completion:nil];
     
 }
 

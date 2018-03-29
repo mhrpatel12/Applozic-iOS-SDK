@@ -40,6 +40,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *mobileNotification;
 @property (strong, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UISwitch *onlineToggleSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+
+- (IBAction)logoutUser:(id)sender;
 
 - (IBAction)editButtonAction:(id)sender;
 @end
@@ -580,6 +583,19 @@ totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInte
         
     }
     
+}
+
+- (IBAction)logoutUser:(id)sender {
+    ALRegisterUserClientService * alUserClientService = [[ALRegisterUserClientService alloc] init];
+    
+    if([ALUserDefaultsHandler getDeviceKeyString])
+    {
+        [alUserClientService logoutWithCompletionHandler:^(ALAPIResponse *response, NSError *error) {
+            
+        }];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"USER_SIGNED_OUT" object:nil];
 }
 
 -(IBAction)editButtonAction:(id)sender

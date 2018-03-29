@@ -1488,51 +1488,28 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="5OP-di-nX6">
                                         <rect key="frame" x="0.0" y="284" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5OP-di-nX6" id="GKL-ct-r73">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5OP-di-nX6" id="GKL-ct-r73">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ch-V6-7WF">
-                                                    <rect key="frame" x="58" y="16" width="200" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="YgY-ac-xR3"/>
-                                                        <constraint firstAttribute="height" constant="22" id="njm-gu-GHn"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd6-bl-npA">
-                                                    <rect key="frame" x="58" y="52" width="200" height="17"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                    <color key="textColor" red="0.2156862745" green="0.48627450979999998" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ssR-vs-NN9">
-                                                    <rect key="frame" x="302" y="38" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="notificationToggle:" destination="dRO-yk-xMN" eventType="touchUpInside" id="GRg-m4-nCZ"/>
-                                                    </connections>
-                                                </switch>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9UV-fl-KPB">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9UV-fl-KPB">
                                                     <rect key="frame" x="33" y="21" width="5" height="0.0"/>
                                                     <color key="backgroundColor" red="0.2156862745" green="0.48627450979999998" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" red="0.2156862745" green="0.48627450979999998" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzq-lH-ZA0">
+                                                    <rect key="frame" x="33" y="24" width="106" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="LOGOUT"/>
+                                                    <connections>
+                                                        <action selector="logoutUser:" destination="dRO-yk-xMN" eventType="touchUpInside" id="FQc-lI-Mk3"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1ch-V6-7WF" firstAttribute="leading" secondItem="9UV-fl-KPB" secondAttribute="trailing" constant="20" id="18D-ju-GvP"/>
                                                 <constraint firstItem="9UV-fl-KPB" firstAttribute="leading" secondItem="GKL-ct-r73" secondAttribute="leadingMargin" constant="17" id="6uf-Lm-Bsy"/>
-                                                <constraint firstItem="1ch-V6-7WF" firstAttribute="top" secondItem="GKL-ct-r73" secondAttribute="topMargin" constant="5" id="Bih-xa-2tV"/>
-                                                <constraint firstItem="rd6-bl-npA" firstAttribute="bottom" secondItem="ssR-vs-NN9" secondAttribute="bottom" id="IBM-jp-WZy"/>
-                                                <constraint firstItem="1ch-V6-7WF" firstAttribute="leading" secondItem="rd6-bl-npA" secondAttribute="leading" id="LOM-cQ-ccH"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="9UV-fl-KPB" secondAttribute="bottom" constant="48" id="LSa-YB-GxJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ssR-vs-NN9" secondAttribute="trailing" constant="8" id="Ptn-kb-Eo9"/>
-                                                <constraint firstItem="rd6-bl-npA" firstAttribute="leading" secondItem="GKL-ct-r73" secondAttribute="leadingMargin" constant="42" id="dV3-dn-t34"/>
                                                 <constraint firstItem="9UV-fl-KPB" firstAttribute="top" secondItem="GKL-ct-r73" secondAttribute="topMargin" constant="10" id="fkP-ix-PsQ"/>
-                                                <constraint firstItem="1ch-V6-7WF" firstAttribute="trailing" secondItem="rd6-bl-npA" secondAttribute="trailing" id="rLN-0F-4lV"/>
-                                                <constraint firstItem="rd6-bl-npA" firstAttribute="top" secondItem="1ch-V6-7WF" secondAttribute="bottom" constant="14" id="rx3-8g-Yrg"/>
-                                                <constraint firstItem="rd6-bl-npA" firstAttribute="bottom" secondItem="GKL-ct-r73" secondAttribute="bottomMargin" id="tIt-VG-Ca4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1548,9 +1525,7 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
                     <connections>
                         <outlet property="activityIndicator" destination="SLW-CD-9bn" id="ZXA-12-Bk0"/>
                         <outlet property="editButton" destination="f40-bQ-ijb" id="Qzf-dh-ldH"/>
-                        <outlet property="mobileNotification" destination="rd6-bl-npA" id="RQS-eM-JV8"/>
-                        <outlet property="notificationTitle" destination="1ch-V6-7WF" id="2cZ-DU-bdN"/>
-                        <outlet property="notificationToggle" destination="ssR-vs-NN9" id="O2Q-uB-zDa"/>
+                        <outlet property="logoutButton" destination="Tzq-lH-ZA0" id="lI9-vf-ODp"/>
                         <outlet property="profileImage" destination="fEQ-TE-P0v" id="SpR-ah-6UK"/>
                         <outlet property="profileStatus" destination="uPH-8k-6t7" id="cqF-cb-mUT"/>
                         <outlet property="uploadImageButton" destination="nY9-bD-W8V" id="I1R-Xc-UBx"/>
@@ -1561,7 +1536,7 @@ Upload Image Button.centerX = scd_profile_BG.centerX + 50</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BA-Aa-P8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859.20000000000005" y="1358.3208395802101"/>
+            <point key="canvasLocation" x="858.39999999999998" y="1357.8710644677662"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sr7-pi-5eS">

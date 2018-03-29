@@ -42,6 +42,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[ self registerForNotification];
+    
+    self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
@@ -66,9 +70,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-//    if (![ALUserDefaultsHandler getApnDeviceToken]){
-//        [ self registerForNotification];
-//    }
+    //    if (![ALUserDefaultsHandler getApnDeviceToken]){
+    //        [ self registerForNotification];
+    //    }
     
     [super viewWillAppear:animated];
     
@@ -167,13 +171,13 @@
 
 - (IBAction)login:(id)sender {
     
-     if([ALUserDefaultsHandler isLoggedIn])
-     {
+    if([ALUserDefaultsHandler isLoggedIn])
+    {
         ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init];
         [registerUserClientService logoutWithCompletionHandler:^(ALAPIResponse *response, NSError *error) {
             
         }];
-     }
+    }
     // Initial login view .....
     
     NSString *message = [[NSString alloc] initWithFormat: @"Hello %@", [self.userIdField text]];
@@ -199,15 +203,23 @@
         
         if (!error)
         {
-            UIStoryboard* storyboardM = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *launchChat = [storyboardM instantiateViewControllerWithIdentifier:@"LaunchChatFromSimpleViewController"];
-            CATransition *transition = [[CATransition alloc] init];
-            transition.duration = 0.40;
-            transition.type = kCATransitionPush;
-            transition.subtype = kCATransitionFromRight;
-            [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-            [self.view.window.layer addAnimation:transition forKey:kCATransition];
-            [self presentViewController:launchChat animated:false completion:nil];
+            if (![ALDataNetworkConnection checkDataNetworkAvailable])
+            {
+                [self.activityView removeFromSuperview];
+            }
+            else
+            {
+                [self.activityView startAnimating];
+            }
+            
+            [self.view addSubview:_activityView];
+            ALUser *user = [[ALUser alloc] init];
+            [user setUserId:[ALUserDefaultsHandler getUserId]];
+            [user setEmail:[ALUserDefaultsHandler getEmailId]];
+            
+            ALChatManager * chatManager = [[ALChatManager alloc] init];
+            [chatManager registerUserAndLaunchChat:user andFromController:self forUser:nil withGroupId:nil];
+            
         }
     }];
 }
@@ -217,7 +229,7 @@
 //-------------------------------------------------------------------------------------------------------------------
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-        //TODO: Also validate user Id and email is entered.
+    //TODO: Also validate user Id and email is entered.
     [textField resignFirstResponder];
     return true;
 }
