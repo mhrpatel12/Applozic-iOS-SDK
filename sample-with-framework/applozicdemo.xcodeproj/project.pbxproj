@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0486F119206D1260000256F6 /* SFCompactDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0486F118206D1260000256F6 /* SFCompactDisplay-Light.otf */; };
+		0486F11B206D1DF2000256F6 /* SFCompactDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0486F11A206D1DF1000256F6 /* SFCompactDisplay-Bold.otf */; };
 		15102E152CFA927B82CEA1B8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C53010819B64C000F9AF3B /* CoreText.framework */; };
 		1DE667DF7B311A11C9675E35 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1B9732748F398619EB8200 /* CoreVideo.framework */; };
 		28AE0C1B9834A2349B7A30F0 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162EC4668DEC45215321962B /* BuddyBuildSDK.framework */; };
@@ -72,6 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0486F118206D1260000256F6 /* SFCompactDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Light.otf"; sourceTree = "<group>"; };
+		0486F11A206D1DF1000256F6 /* SFCompactDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Bold.otf"; sourceTree = "<group>"; };
 		0A1266FFF6FF481F4CFF88E7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0DC495FFC34D1F473FCFB224 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0E71166F2B6E73BE1C8CE86E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -181,6 +185,8 @@
 		6D6DF1E81BC551FA00EBA00F = {
 			isa = PBXGroup;
 			children = (
+				0486F11A206D1DF1000256F6 /* SFCompactDisplay-Bold.otf */,
+				0486F118206D1260000256F6 /* SFCompactDisplay-Light.otf */,
 				C7ACBBC71DB650DD0087EE35 /* Fabric.framework */,
 				C7ACBBC81DB650DD0087EE35 /* Crashlytics.framework */,
 				4694ECDE1D99575B006050AB /* restrictWords.txt */,
@@ -331,7 +337,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0486F11B206D1DF2000256F6 /* SFCompactDisplay-Bold.otf in Resources */,
 				4694ECDF1D99575B006050AB /* restrictWords.txt in Resources */,
+				0486F119206D1260000256F6 /* SFCompactDisplay-Light.otf in Resources */,
 				6D6DF2071BC551FA00EBA00F /* LaunchScreen.storyboard in Resources */,
 				6D6D0BAB1C297A20002E8B3D /* Roboto-Regular.ttf in Resources */,
 				6D54E5F41BE4B28E001BD278 /* Default-568h@2x.png in Resources */,

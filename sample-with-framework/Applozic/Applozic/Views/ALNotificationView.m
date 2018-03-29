@@ -200,8 +200,8 @@
 
     [[TSMessageView appearance] setTitleFont:[UIFont boldSystemFontOfSize:17]];
     [[TSMessageView appearance] setContentFont:[UIFont systemFontOfSize:13]];
-    [[TSMessageView appearance] setTitleFont:[UIFont fontWithName:@"Helvetica Neue" size:18.0]];
-    [[TSMessageView appearance] setContentFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
+    [[TSMessageView appearance] setTitleFont:[UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:18.0]];
+    [[TSMessageView appearance] setContentFont:[UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:14]];
     [[TSMessageView appearance] setTitleTextColor:[UIColor whiteColor]];
     [[TSMessageView appearance] setContentTextColor:[UIColor whiteColor]];
 
@@ -298,8 +298,8 @@
     
     [[TSMessageView appearance] setTitleFont:[UIFont boldSystemFontOfSize:17]];
     [[TSMessageView appearance] setContentFont:[UIFont systemFontOfSize:13]];
-    [[TSMessageView appearance] setTitleFont:[UIFont fontWithName:@"Helvetica Neue" size:18.0]];
-    [[TSMessageView appearance] setContentFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
+    [[TSMessageView appearance] setTitleFont:[UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:18.0]];
+    [[TSMessageView appearance] setContentFont:[UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:14]];
     [[TSMessageView appearance] setTitleTextColor:[UIColor whiteColor]];
     [[TSMessageView appearance] setContentTextColor:[UIColor whiteColor]];
     
@@ -465,8 +465,8 @@
     
     [[TSMessageView appearance] setTitleFont:[UIFont boldSystemFontOfSize:17]];
     [[TSMessageView appearance] setContentFont:[UIFont systemFontOfSize:13]];
-    [[TSMessageView appearance] setTitleFont:[UIFont fontWithName:@"Helvetica Neue" size:18.0]];
-    [[TSMessageView appearance] setContentFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
+    [[TSMessageView appearance] setTitleFont:[UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:18.0]];
+    [[TSMessageView appearance] setContentFont:[UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:14]];
     [[TSMessageView appearance] setTitleTextColor:[UIColor whiteColor]];
     [[TSMessageView appearance] setContentTextColor:[UIColor whiteColor]];
     [[TSMessageView appearance] setDuration:10.0];

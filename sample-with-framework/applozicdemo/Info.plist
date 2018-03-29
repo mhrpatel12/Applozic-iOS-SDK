@@ -62,10 +62,12 @@
 	<string>Allow MicroPhone</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow Photos</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Allow write access</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow write access</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>SFCompactDisplay-Bold.otf</string>
+		<string>SFCompactDisplay-Light.otf</string>
 		<string>Roboto-Regular.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>

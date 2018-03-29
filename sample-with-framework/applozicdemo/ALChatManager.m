@@ -414,7 +414,7 @@
     
     [ALApplozicSettings setCustomMessageBackgroundColor:[UIColor lightGrayColor]];              /*  SET CUSTOM MESSAGE COLOR */
     [ALApplozicSettings setCustomMessageFontSize:14];                                     /*  SET CUSTOM MESSAGE FONT SIZE */
-    [ALApplozicSettings setCustomMessageFont:@"Helvetica"];
+    [ALApplozicSettings setCustomMessageFont:@"SFCompactDisplay-Light"];
     
     //****************** DATE COLOUR : AT THE BOTTOM OF MESSAGE BUBBLE ******************/
     [ALApplozicSettings setDateColor:[UIColor colorWithRed:51.0/255 green:51.0/255 blue:51.0/255 alpha:0.5]];
@@ -521,7 +521,7 @@
     [ALUserDefaultsHandler setDebugLogsRequire:YES];                            /*   ENABLE / DISABLE LOGS   */
     [ALUserDefaultsHandler setLoginUserConatactVisibility:NO];
     [ALApplozicSettings setUserProfileHidden:NO];
-    [ALApplozicSettings setFontFace:@"Helvetica"];
+    [ALApplozicSettings setFontFace:@"SFCompactDisplay-Light"];
     [ALApplozicSettings setChatWallpaperImageName:@"wallpaper"];
     [ALApplozicSettings replyOptionEnabled:YES];
     [ALApplozicSettings forwardOptionEnableOrDisable:YES];

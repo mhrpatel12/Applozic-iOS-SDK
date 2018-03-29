@@ -9,6 +9,7 @@
 #import "UIView+Toast.h"
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
+#import "ALApplozicSettings.h"
 
 /*
  *  CONFIGURE THESE VALUES TO ADJUST LOOK & FEEL,
@@ -297,7 +298,7 @@ NSString * const CSToastPositionBottom          = @"bottom";
     if (title != nil) {
         titleLabel = [[UILabel alloc] init];
         titleLabel.numberOfLines = CSToastMaxTitleLines;
-        titleLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+        titleLabel.font = [UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:13];
         titleLabel.textAlignment = NSTextAlignmentLeft;
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         titleLabel.textColor = [UIColor whiteColor];
@@ -314,7 +315,7 @@ NSString * const CSToastPositionBottom          = @"bottom";
     if (message != nil) {
         messageLabel = [[UILabel alloc] init];
         messageLabel.numberOfLines = CSToastMaxMessageLines;
-        messageLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+        messageLabel.font = [UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:13];
         messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
         messageLabel.textColor = [UIColor whiteColor];
         messageLabel.backgroundColor = [UIColor clearColor];

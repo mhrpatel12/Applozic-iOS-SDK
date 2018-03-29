@@ -35,7 +35,7 @@
         self.mNameLabel = [[UILabel alloc] init];
         [self.mNameLabel setTextColor:[UIColor whiteColor]];
         [self.mNameLabel setBackgroundColor:[UIColor clearColor]];
-        [self.mNameLabel setFont:[UIFont fontWithName:@"Helvetica" size:18]];
+        [self.mNameLabel setFont:[UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:18]];
         self.mNameLabel.textAlignment = NSTextAlignmentCenter;
         self.mNameLabel.layer.cornerRadius = self.mNameLabel.frame.size.width/2;
         self.mNameLabel.layer.masksToBounds = YES;
@@ -103,7 +103,7 @@
         [self.contentView addSubview:self.imageWithText];
         
         self.mChannelMemberName = [[UILabel alloc] init];
-        self.mChannelMemberName.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
+        self.mChannelMemberName.font = [UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:15];
         self.mChannelMemberName.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.mChannelMemberName];
         

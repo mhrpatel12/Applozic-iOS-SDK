@@ -33,18 +33,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <button opaque="NO" alpha="0.94999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nec-ye-DJb">
-                                                <rect key="frame" x="100" y="486" width="400" height="93"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="93" id="qJg-HB-jj3"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="Applozic512h">
-                                                    <color key="titleShadowColor" red="0.79895767500000003" green="0.94653931469999997" blue="1" alpha="0.28000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="mChatLaunchButton:" destination="8U3-hu-EI6" eventType="touchUpInside" id="8eK-XZ-r3U"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kf-N3-0PL">
                                                 <rect key="frame" x="50" y="221" width="500" height="38"/>
                                                 <color key="backgroundColor" red="0.082352941176470587" green="0.53333333333333333" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,19 +47,42 @@
                                                     <action selector="login:" destination="t0V-gj-2WO" eventType="touchUpInside" id="3Tt-Tf-FYS"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" alpha="0.94999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nec-ye-DJb">
+                                                <rect key="frame" x="125" y="506" width="350" height="93"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="93" id="bVf-Jp-iyJ"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Applozic512h">
+                                                    <color key="titleShadowColor" red="0.79895767500000003" green="0.94653931469999997" blue="1" alpha="0.28000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mChatLaunchButton:" destination="8U3-hu-EI6" eventType="touchUpInside" id="8eK-XZ-r3U"/>
+                                                    <action selector="togglePrivacyPolicy:" destination="t0V-gj-2WO" eventType="touchUpInside" id="hLd-e8-ucp"/>
+                                                </connections>
+                                            </button>
+                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rlt-OF-6iK">
+                                                <rect key="frame" x="30" y="221" width="540" height="275"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Nec-ye-DJb" secondAttribute="trailing" constant="100" id="6lD-V1-od0"/>
-                                            <constraint firstItem="Nec-ye-DJb" firstAttribute="leading" secondItem="gmQ-aM-HWv" secondAttribute="leading" constant="100" id="Fa3-Zh-5RJ"/>
+                                            <constraint firstItem="Nec-ye-DJb" firstAttribute="top" secondItem="rlt-OF-6iK" secondAttribute="bottom" constant="10" id="56s-2t-P9Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="rlt-OF-6iK" secondAttribute="trailing" constant="30" id="7lH-8P-zK3"/>
+                                            <constraint firstItem="rlt-OF-6iK" firstAttribute="leading" secondItem="gmQ-aM-HWv" secondAttribute="leading" constant="30" id="8ob-AB-b4c"/>
+                                            <constraint firstItem="Nec-ye-DJb" firstAttribute="leading" secondItem="gmQ-aM-HWv" secondAttribute="leading" constant="125" id="DRK-UW-ESa"/>
                                             <constraint firstItem="1Kf-N3-0PL" firstAttribute="leading" secondItem="gmQ-aM-HWv" secondAttribute="leading" constant="50" id="GJ9-TS-arN"/>
+                                            <constraint firstItem="rlt-OF-6iK" firstAttribute="top" secondItem="1Kf-N3-0PL" secondAttribute="top" id="GZQ-ZE-Mp9"/>
                                             <constraint firstItem="hRe-YD-lEv" firstAttribute="centerX" secondItem="gmQ-aM-HWv" secondAttribute="centerX" id="JuM-fz-u41"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nec-ye-DJb" secondAttribute="trailing" constant="125" id="hB3-2o-W2R"/>
                                             <constraint firstItem="1Kf-N3-0PL" firstAttribute="top" secondItem="hRe-YD-lEv" secondAttribute="bottom" constant="23" id="iBk-lL-uFy"/>
                                             <constraint firstItem="hRe-YD-lEv" firstAttribute="top" secondItem="gmQ-aM-HWv" secondAttribute="top" constant="168" id="mip-QT-ImC"/>
                                             <constraint firstItem="hRe-YD-lEv" firstAttribute="leading" secondItem="gmQ-aM-HWv" secondAttribute="leading" constant="15" id="osW-c5-nX6"/>
-                                            <constraint firstItem="Nec-ye-DJb" firstAttribute="centerX" secondItem="gmQ-aM-HWv" secondAttribute="centerX" id="q4S-dj-fkv"/>
+                                            <constraint firstItem="Nec-ye-DJb" firstAttribute="bottom" secondItem="gmQ-aM-HWv" secondAttribute="bottomMargin" id="pqS-dA-Jo5"/>
                                             <constraint firstAttribute="trailing" secondItem="1Kf-N3-0PL" secondAttribute="trailing" constant="50" id="ubw-DL-C9j"/>
-                                            <constraint firstAttribute="bottom" secondItem="Nec-ye-DJb" secondAttribute="bottom" constant="28" id="vaJ-gh-AvJ"/>
                                         </constraints>
                                     </view>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BnH-B4-bms">
@@ -122,12 +133,14 @@
                     <connections>
                         <outlet property="getStarted" destination="1Kf-N3-0PL" id="fTG-Tj-upX"/>
                         <outlet property="mActivityIndicator" destination="BnH-B4-bms" id="eYB-yj-M8S"/>
+                        <outlet property="privacyPolicy" destination="rlt-OF-6iK" id="2nJ-dL-1Sw"/>
+                        <outlet property="privacyPolicyButton" destination="Nec-ye-DJb" id="n7k-hz-zQc"/>
                         <outlet property="userIdField" destination="hRe-YD-lEv" id="TMR-Lq-oft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VsK-qJ-ZRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368" y="651"/>
+            <point key="canvasLocation" x="368" y="650.37481259370315"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5PI-Fd-jr0">

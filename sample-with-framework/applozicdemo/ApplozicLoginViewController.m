@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *userIdField;
 @property (weak, nonatomic) IBOutlet UIButton *getStarted;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *privacyPolicyButton;
+@property (weak, nonatomic) IBOutlet UITextView *privacyPolicy;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *mActivityIndicator;
 
@@ -52,6 +54,15 @@
     [self.getStarted setTitle: NSLocalizedStringWithDefaultValue(@"getStarted", nil, [NSBundle mainBundle], @"Get Started", @"") forState:UIControlStateNormal]; // To set the title
     self.userIdField.placeholder = NSLocalizedStringWithDefaultValue(@"email", nil, [NSBundle mainBundle], @"Email", @"");
     
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -142,6 +153,17 @@
 //-------------------------------------------------------------------------------------------------------------------
 //      IBAction func
 //-------------------------------------------------------------------------------------------------------------------
+- (IBAction)togglePrivacyPolicy:(id)sender {
+    if(self.privacyPolicy.hidden){
+        self.privacyPolicy.hidden = NO;
+        self.getStarted.hidden = YES;
+        self.userIdField.hidden = YES;
+    }else {
+        self.privacyPolicy.hidden = YES;
+        self.getStarted.hidden = NO;
+        self.userIdField.hidden = NO;
+    }
+}
 
 - (IBAction)login:(id)sender {
     
@@ -165,6 +187,7 @@
     
     ALUser * user = [[ALUser alloc] init];
     [user setUserId:[self.userIdField text]];
+    [user setPassword:@"12"];
     [user setAuthenticationTypeId:(short)APPLOZIC];
     [self.mActivityIndicator startAnimating];
     [ALUserDefaultsHandler setUserAuthenticationTypeId:(short)APPLOZIC];
@@ -178,7 +201,13 @@
         {
             UIStoryboard* storyboardM = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *launchChat = [storyboardM instantiateViewControllerWithIdentifier:@"LaunchChatFromSimpleViewController"];
-            [self presentViewController:launchChat animated:YES completion:nil];
+            CATransition *transition = [[CATransition alloc] init];
+            transition.duration = 0.40;
+            transition.type = kCATransitionPush;
+            transition.subtype = kCATransitionFromRight;
+            [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+            [self.view.window.layer addAnimation:transition forKey:kCATransition];
+            [self presentViewController:launchChat animated:false completion:nil];
         }
     }];
 }

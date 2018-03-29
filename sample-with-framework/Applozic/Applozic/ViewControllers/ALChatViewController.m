@@ -575,7 +575,7 @@ ABPeoplePickerNavigationControllerDelegate, ALSoundRecorderProtocol>
 {
     [navigationController.navigationBar setTitleTextAttributes: @{
                                                                   NSForegroundColorAttributeName:[ALApplozicSettings getColorForNavigationItem],
-                                                                  NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Bold" size:18]
+                                                                  NSFontAttributeName:[UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:18]
                                                                   }];
     [navigationController.navigationBar setBarTintColor: [ALApplozicSettings getColorForNavigation]];
     [navigationController.navigationBar setTintColor:[ALApplozicSettings getColorForNavigationItem]];
@@ -1824,7 +1824,7 @@ ABPeoplePickerNavigationControllerDelegate, ALSoundRecorderProtocol>
     for (UILabel * label in labelArray)
     {
         label.textColor = [ALApplozicSettings getColorForNavigationItem];
-        label.font = [UIFont fontWithName:@"Helvetica" size:11.0];
+        label.font = [UIFont fontWithName:[ALApplozicSettings getCustomMessageFont] size:11.0];
         [self resizeLabels:label];
         [view addSubview:label];
     }
