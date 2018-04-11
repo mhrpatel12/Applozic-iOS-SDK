@@ -191,7 +191,7 @@
     
     ALUser * user = [[ALUser alloc] init];
     [user setUserId:[self.userIdField text]];
-    [user setPassword:@"12"];
+    [user setPassword:@"123"];
     [user setAuthenticationTypeId:(short)APPLOZIC];
     [self.mActivityIndicator startAnimating];
     [ALUserDefaultsHandler setUserAuthenticationTypeId:(short)APPLOZIC];

@@ -176,6 +176,7 @@ ABPeoplePickerNavigationControllerDelegate, ALSoundRecorderProtocol>
     [self loadChatView];
     self.placeHolderTxt = NSLocalizedStringWithDefaultValue(@"placeHolderText", nil, [NSBundle mainBundle], @"Write a Message...", @"");
     self.sendMessageTextView.text = self.placeHolderTxt;
+    [self.sendMessageTextView setBackgroundColor: [UIColor whiteColor]];
     self.defaultMessageViewHeight = 56.0;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateVOIPMsg)

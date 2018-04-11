@@ -524,6 +524,8 @@
     [ALApplozicSettings setFontFace:@"SFCompactDisplay-Light"];
     [ALApplozicSettings setChatWallpaperImageName:@"wallpaper"];
     [ALApplozicSettings replyOptionEnabled:YES];
+    [ALApplozicSettings setCallOption:NO];
+    [ALApplozicSettings setDateColor:[UIColor whiteColor]];
     [ALApplozicSettings forwardOptionEnableOrDisable:YES];
 
 
