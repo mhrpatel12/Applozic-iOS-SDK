@@ -158,6 +158,7 @@
 //      IBAction func
 //-------------------------------------------------------------------------------------------------------------------
 - (IBAction)togglePrivacyPolicy:(id)sender {
+    [self.userIdField setPlaceholder:@""];
     if(self.privacyPolicy.hidden){
         self.privacyPolicy.hidden = NO;
         self.getStarted.hidden = YES;
@@ -170,7 +171,7 @@
 }
 
 - (IBAction)login:(id)sender {
-    
+    [self.userIdField setPlaceholder:@""];
     if([ALUserDefaultsHandler isLoggedIn])
     {
         ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init];

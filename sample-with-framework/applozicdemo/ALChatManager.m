@@ -526,6 +526,7 @@
     [ALApplozicSettings replyOptionEnabled:YES];
     [ALApplozicSettings setCallOption:NO];
     [ALApplozicSettings setDateColor:[UIColor whiteColor]];
+    [ALApplozicSettings setMsgDateColor:[UIColor whiteColor]];
     [ALApplozicSettings forwardOptionEnableOrDisable:YES];
 
 
