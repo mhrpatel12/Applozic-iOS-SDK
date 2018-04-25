@@ -24,6 +24,7 @@
 #import "ALDataNetworkConnection.h"
 #import "UIImage+MultiFormat.h"
 #import "ALShowImageViewController.h"
+#import "ALMessageClientService.h"
 
 // Constants
 #define MT_INBOX_CONSTANT "4"
@@ -271,8 +272,8 @@ UIViewController * modalCon;
         
         if(alContact.contactImageUrl)
         {
-            NSURL * theUrl1 = [NSURL URLWithString:alContact.contactImageUrl];
-            [self.mUserProfileImageView sd_setImageWithURL:theUrl1 placeholderImage: [ALUtilityClass getImageFromFramworkBundle:@"ic_contact_picture_holo_light.png"] options:SDWebImageRefreshCached];
+            ALMessageClientService * messageClientService = [[ALMessageClientService alloc]init];
+            [messageClientService downloadImageUrlAndSet:alContact.contactImageUrl imageView:self.mUserProfileImageView defaultImage:@"ic_contact_picture_holo_light.png"];
         }
         else
         {
@@ -427,19 +428,32 @@ UIViewController * modalCon;
     {
         NSString * docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         NSString * filePath = [docDir stringByAppendingPathComponent:alMessage.imageFilePath];
-        theUrl = [NSURL fileURLWithPath:filePath];
+//        theUrl = [NSURL fileURLWithPath:filePath];
+        [self setInImageView:[NSURL fileURLWithPath:filePath]];
     }
     else
     {
+        ALMessageClientService * messageClientService = [[ALMessageClientService alloc]init];
+        [messageClientService downloadImageUrl:alMessage.fileMeta.thumbnailBlobKey withCompletion:^(NSString *fileURL, NSError *error) {
+            if(error)
+            {
+                NSLog(@"ERROR GETTING DOWNLOAD URL : %@", error);
+                return;
+            }
+            NSLog(@"ATTACHMENT DOWNLOAD URL : %@", fileURL);
+            [self setInImageView:[NSURL URLWithString:fileURL]];
+        }];
+        
         theUrl = [NSURL URLWithString:alMessage.fileMeta.thumbnailUrl];
     }
-    
-    [self.mImageView sd_setImageWithURL:theUrl];
     
     return self;
     
 }
 
+-(void) setInImageView:(NSURL*)url{
+    [self.mImageView sd_setImageWithURL:url];
+}
 
 #pragma mark - Menu option tap Method -
 

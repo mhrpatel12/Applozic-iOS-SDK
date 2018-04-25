@@ -23,7 +23,6 @@
 		6D6DF1F61BC551FA00EBA00F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF1F51BC551FA00EBA00F /* main.m */; };
 		6D6DF1F91BC551FA00EBA00F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF1F81BC551FA00EBA00F /* AppDelegate.m */; };
 		6D6DF1FC1BC551FA00EBA00F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF1FB1BC551FA00EBA00F /* ViewController.m */; };
-		6D6DF2021BC551FA00EBA00F /* applozicdemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF2001BC551FA00EBA00F /* applozicdemo.xcdatamodeld */; };
 		6D6DF2041BC551FA00EBA00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DF2031BC551FA00EBA00F /* Assets.xcassets */; };
 		6D6DF2071BC551FA00EBA00F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DF2051BC551FA00EBA00F /* LaunchScreen.storyboard */; };
 		6D7F4C701C314EBD00AE04CF /* ALChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F4C6F1C314EBD00AE04CF /* ALChatManager.m */; };
@@ -98,7 +97,6 @@
 		6D6DF1F81BC551FA00EBA00F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6D6DF1FA1BC551FA00EBA00F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6D6DF1FB1BC551FA00EBA00F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6D6DF2011BC551FA00EBA00F /* applozicdemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = applozicdemo.xcdatamodel; sourceTree = "<group>"; };
 		6D6DF2031BC551FA00EBA00F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D6DF2061BC551FA00EBA00F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D6DF2081BC551FA00EBA00F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				6D6DF2031BC551FA00EBA00F /* Assets.xcassets */,
 				6D6DF2051BC551FA00EBA00F /* LaunchScreen.storyboard */,
 				6D6DF2081BC551FA00EBA00F /* Info.plist */,
-				6D6DF2001BC551FA00EBA00F /* applozicdemo.xcdatamodeld */,
 				6D6DF1F41BC551FA00EBA00F /* Supporting Files */,
 			);
 			path = applozicdemo;
@@ -365,7 +362,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6DF2021BC551FA00EBA00F /* applozicdemo.xcdatamodeld in Sources */,
 				6D44D95B1BF60C990039B1A7 /* LaunchChatFromSimpleViewController.m in Sources */,
 				6D6DF1FC1BC551FA00EBA00F /* ViewController.m in Sources */,
 				29B643C91CE9F24800FE8A73 /* ALSettingsForDebug.m in Sources */,
@@ -568,19 +564,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		6D6DF2001BC551FA00EBA00F /* applozicdemo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6D6DF2011BC551FA00EBA00F /* applozicdemo.xcdatamodel */,
-			);
-			currentVersion = 6D6DF2011BC551FA00EBA00F /* applozicdemo.xcdatamodel */;
-			path = applozicdemo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6D6DF1E91BC551FA00EBA00F /* Project object */;
 }

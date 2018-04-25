@@ -2054,6 +2054,7 @@
     ALFileMetaInfo *info = [ALFileMetaInfo new];
     
     info.blobKey = nil;
+    info.thumbnailBlobKey=nil;
     info.contentType = @"";
     info.createdAtTime = nil;
     info.key = nil;
@@ -4151,15 +4152,22 @@ style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             {
                 NSString * docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
                 NSString * filePath = [docDir stringByAppendingPathComponent:message.imageFilePath];
-                theUrl = [NSURL fileURLWithPath:filePath];
+                [self showImage: [NSURL fileURLWithPath:filePath]];
             }
             else
             {
-                theUrl = [NSURL URLWithString:message.fileMeta.thumbnailUrl];
-            }
+                ALMessageClientService * messageClientService = [[ALMessageClientService alloc]init];
+                [messageClientService downloadImageUrl:message.fileMeta.thumbnailBlobKey withCompletion:^(NSString *fileURL, NSError *error) {
+                    if(error)
+                    {
+                        NSLog(@"ERROR GETTING DOWNLOAD URL : %@", error);
+                        return;
+                    }
+                    NSLog(@"ATTACHMENT DOWNLOAD URL : %@", fileURL);
+                    [self showImage: [NSURL URLWithString:fileURL]];
+                }];
             
-            [self.replyAttachmentPreview sd_setImageWithURL:theUrl];
-            [self.replyIcon setImage:[ALUtilityClass getImageFromFramworkBundle:@"ic_action_camera.png"]];
+            }
             
         }else if([message.fileMeta.contentType hasPrefix:@"video"]){
             UIImage * globalThumbnail = [UIImage new];
@@ -4231,6 +4239,11 @@ style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     ALMessageDBService* messageDBService = [[ALMessageDBService alloc]init];
     [messageDBService updateMessageReplyType:message.key replyType:[NSNumber numberWithInt:AL_A_REPLY]];
     
+}
+
+-(void) showImage:(NSURL *)url{
+    [self.replyAttachmentPreview sd_setImageWithURL:url];
+    [self.replyIcon setImage:[ALUtilityClass getImageFromFramworkBundle:@"ic_action_camera.png"]];
 }
 
 -(void) scrollToReplyMessage:(ALMessage *)alMessage

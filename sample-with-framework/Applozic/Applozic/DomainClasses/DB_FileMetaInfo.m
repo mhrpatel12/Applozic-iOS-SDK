@@ -12,6 +12,7 @@
 @implementation DB_FileMetaInfo
 
 @dynamic blobKeyString;
+@dynamic thumbnailBlobKeyString;
 @dynamic contentType;
 @dynamic createdAtTime;
 @dynamic key;

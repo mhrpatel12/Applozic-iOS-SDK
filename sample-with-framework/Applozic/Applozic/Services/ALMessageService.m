@@ -27,6 +27,7 @@
 #include <tgmath.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "ALApplozicSettings.h"
+#import <objc/runtime.h>
 
 @implementation ALMessageService 
 
@@ -645,22 +646,31 @@ withAttachmentAtLocation:(NSString *)attachmentLocalPath
 
 +(void) processImageDownloadforMessage:(ALMessage *) message withdelegate:(id)delegate
 {
-    NSMutableURLRequest * theRequest;
-    if(message.fileMeta.url) {
-        NSString *urlString = message.fileMeta.url;
-        theRequest = [ALRequestHandler createGETRequestWithUrlStringWithoutHeader:urlString paramString:nil];
-    } else if(ALApplozicSettings.isStorageServiceEnabled) {
-        NSString *urlString = [NSString stringWithFormat:@"%@%@%@",KBASE_FILE_URL,IMAGE_DOWNLOAD_ENDPOINT, message.fileMeta.blobKey];
-        theRequest = [ALRequestHandler createGETRequestWithUrlString:urlString paramString:nil];
-    } else {
-        NSString *urlString = [NSString stringWithFormat:@"%@/rest/ws/aws/file/%@",KBASE_FILE_URL,message.fileMeta.blobKey];
-      theRequest = [ALRequestHandler createGETRequestWithUrlString:urlString paramString:nil];
-    }
-
-    ALConnection * connection = [[ALConnection alloc] initWithRequest:theRequest delegate:delegate startImmediately:YES];
-    connection.keystring = message.key;
-    connection.connectionType = @"Image Downloading";
-    [[[ALConnectionQueueHandler sharedConnectionQueueHandler] getCurrentConnectionQueue] addObject:connection];
+    ALMessageClientService * messageClientService = [[ALMessageClientService alloc]init];
+    [messageClientService downloadImageUrl:message.fileMeta.blobKey withCompletion:^(NSString *fileURL, NSError *error) {
+        if(error)
+        {
+            NSLog(@"ERROR GETTING DOWNLOAD URL : %@", error);
+            return;
+        }
+        NSLog(@"ATTACHMENT DOWNLOAD URL : %@", fileURL);
+        
+        NSMutableURLRequest * theRequest;
+        if(message.fileMeta.url) {
+            theRequest = [ALRequestHandler createGETRequestWithUrlStringWithoutHeader:fileURL paramString:nil];
+        } else if(ALApplozicSettings.isStorageServiceEnabled) {
+            NSString *urlString = [NSString stringWithFormat:@"%@%@%@",KBASE_FILE_URL,IMAGE_DOWNLOAD_ENDPOINT, message.fileMeta.blobKey];
+            theRequest = [ALRequestHandler createGETRequestWithUrlString:urlString paramString:nil];
+        } else {
+            NSString *urlString = [NSString stringWithFormat:@"%@/rest/ws/aws/file/%@",KBASE_FILE_URL,message.fileMeta.blobKey];
+            theRequest = [ALRequestHandler createGETRequestWithUrlString:urlString paramString:nil];
+        }
+        
+        ALConnection * connection = [[ALConnection alloc] initWithRequest:theRequest delegate:delegate startImmediately:YES];
+        connection.keystring = message.key;
+        connection.connectionType = @"Image Downloading";
+        [[[ALConnectionQueueHandler sharedConnectionQueueHandler] getCurrentConnectionQueue] addObject:connection];
+    }];
 }
 
 +(ALMessage*) processFileUploadSucess: (ALMessage *) message{
@@ -669,6 +679,7 @@ withAttachmentAtLocation:(NSString *)attachmentLocalPath
     DB_Message *dbMessage =  (DB_Message*)[dbService getMessageByKey:@"key" value:message.key];
     
     dbMessage.fileMetaInfo.blobKeyString = message.fileMeta.blobKey;
+    dbMessage.fileMetaInfo.thumbnailBlobKeyString = message.fileMeta.thumbnailBlobKey;
     dbMessage.fileMetaInfo.contentType = message.fileMeta.contentType;
     dbMessage.fileMetaInfo.createdAtTime = message.fileMeta.createdAtTime;
     dbMessage.fileMetaInfo.key = message.fileMeta.key;

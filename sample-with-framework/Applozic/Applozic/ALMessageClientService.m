@@ -23,7 +23,7 @@
 #import "ALUserService.h"
 #import "NSString+Encode.h"
 #import "ALApplozicSettings.h"
-
+#import "UIImageView+WebCache.h"
 
 @implementation ALMessageClientService
 
@@ -58,6 +58,32 @@
         
     }];
 
+}
+
+-(void) downloadImageUrl: (NSString *) blobKey withCompletion:(void(^)(NSString * fileURL, NSError *error)) completion {
+    
+    NSString * theUrlString = [NSString stringWithFormat:@"%@/files/url",KBASE_FILE_URL];
+    NSString * blobParamString = [@"" stringByAppendingFormat:@"&key=%@",blobKey];
+    NSMutableURLRequest * urlRequest = [ALRequestHandler createGETRequestWithUrlString:theUrlString paramString:blobParamString];
+    
+    [ALResponseHandler processRequest:urlRequest andTag:@"FILE DOWNLOAD URL" WithCompletionHandler:^(id theJson, NSError *theError) {
+        
+        if (theError)
+        {
+            completion(nil,theError);
+            return;
+        }
+        NSString * imageDownloadURL = (NSString *)theJson;
+        NSLog(@"RESPONSE_IMG_URL :: %@",imageDownloadURL);
+        completion(imageDownloadURL, nil);
+        
+    }];
+}
+
+-(void) downloadImageUrlAndSet: (NSString *) blobKey imageView:(UIImageView *) imageView defaultImage:(NSString *) defaultImage {
+    
+    NSURL * theUrl1 = [NSURL URLWithString:blobKey];
+    [imageView sd_setImageWithURL:theUrl1 placeholderImage:[ALUtilityClass getImageFromFramworkBundle:defaultImage] options:SDWebImageRefreshCached];
 }
 
 -(void) addWelcomeMessage:(NSNumber *)channelKey
